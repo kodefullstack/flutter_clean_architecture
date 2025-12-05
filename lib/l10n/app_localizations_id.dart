@@ -10,4 +10,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get waiting => 'Silahkan tunggu...';
+
+  @override
+  String get theme_title => 'Tema';
+
+  @override
+  String get theme_button_change => 'Ubah Tema';
 }

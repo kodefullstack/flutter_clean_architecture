@@ -24,14 +24,10 @@ var core = {
 };
 
 var features = {
-  "name": "auth",
+  "name": "theme",
   "data":[
     {
-      "name": "login"
-    },{
-      "name": "register"
-    },{
-      "name": "otp"
+      "name": "theme"
     }
   ],
 };
@@ -96,9 +92,7 @@ createFeatures(){
     createFile("features/$feature/domain/entities/$entities");
 
     var usecases = "${name}_usecases";
-    var usecasesImpl = "${name}_usecases_impl";
     createFile("features/$feature/domain/usecases/$name/$usecases");
-    createFile("features/$feature/domain/usecases/$name/$usecasesImpl");
 
     var bloc = "${name}_bloc";
     var blocEvent = "${name}_event";
@@ -150,9 +144,7 @@ createDomain(){
     createFile("features/$feature/domain/entities/$entities");
 
     var usecases = "${name}_usecases";
-    var usecasesImpl = "${name}_usecases_impl";
     createFile("features/$feature/domain/usecases/$name/$usecases");
-    createFile("features/$feature/domain/usecases/$name/$usecasesImpl");
   }
 }
 

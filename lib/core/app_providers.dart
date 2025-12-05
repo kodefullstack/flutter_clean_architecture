@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/features/theme/presentation/blocs/theme/theme_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class AppProviders extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        //BlocProvider(create: (context) => getIt<BlocName>()),
+        BlocProvider(create: (context) => getIt<ThemeBloc>()),
       ],
       child: child,
     );

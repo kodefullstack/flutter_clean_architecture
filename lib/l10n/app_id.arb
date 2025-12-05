@@ -1,4 +1,6 @@
 {
   "@@locale": "id",
-  "waiting":"Silahkan tunggu..."
+  "waiting":"Silahkan tunggu...",
+  "theme_title":"Tema",
+  "theme_button_change": "Ubah Tema"
 }

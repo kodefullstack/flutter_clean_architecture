@@ -99,6 +99,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Silahkan tunggu...'**
   String get waiting;
+
+  /// No description provided for @theme_title.
+  ///
+  /// In id, this message translates to:
+  /// **'Tema'**
+  String get theme_title;
+
+  /// No description provided for @theme_button_change.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Tema'**
+  String get theme_button_change;
 }
 
 class _AppLocalizationsDelegate

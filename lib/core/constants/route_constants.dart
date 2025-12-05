@@ -1,5 +1,6 @@
 class RouteConstants {
   RouteConstants._();
 
-  static const String initialRoute = '/';
+  static const String initial = '/theme';
+  static const String theme = '/theme';
 }
