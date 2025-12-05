@@ -92,7 +92,7 @@ createFeatures(){
     createFile("features/$feature/domain/repositories/$repositories");
     createFile("features/$feature/data/repositories/$repositoriesImpl");
 
-    var entities = "${name}_entities";
+    var entities = "${name}_entity";
     createFile("features/$feature/domain/entities/$entities");
 
     var usecases = "${name}_usecases";
@@ -146,7 +146,7 @@ createDomain(){
     createFile("features/$feature/domain/repositories/$repositories");
     createFile("features/$feature/data/repositories/$repositoriesImpl");
 
-    var entities = "${name}_entities";
+    var entities = "${name}_entity";
     createFile("features/$feature/domain/entities/$entities");
 
     var usecases = "${name}_usecases";
