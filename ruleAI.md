@@ -22,28 +22,42 @@ Any Agent Code AI tasked with performing code changes must adhere to this commit
 
 ---
 
-## 2. 🚀 Application Startup Configuration
+## 2. 🚀 Application Startup and Configuration
+
+### 2.1. Centralized Startup Initialization (`AppConfig`)
 
 All necessary application setup and initialization tasks must be centralized within the `AppConfig` class and executed sequentially in the `main()` function.
 
-* **Rule:** If you need to initialize a new service or configuration when the application starts (e.g., database, services, external SDKs):
+* **Rule:** If you need to initialize a new service or configuration (beyond the standard `initializeFirebase()` and `initializeDatabase()`):
     1.  Add a new **asynchronous function** (e.g., `Future<void> customMethod() async {}`) to the `AppConfig` class.
     2.  Call this new function in `main()` using the **`await`** keyword to ensure sequential execution.
 
 > **Example in `main()`:**
 > ```dart
 > void main() async {
->   WidgetsFlutterBinding.ensureInitialized();
-> 
->   final config = ConfigEnv(Environment.dev);
+>   // ... setup code
 >   final appConfig = AppConfig(config);
 >   await appConfig.initializeFirebase();
 >   await appConfig.initializeDatabase();
->   await appConfig.customMethod(); // <--- New initialization method
-> 
->   final getIt = await getDependencies(config);
->   runApp(AppProviders(getIt: getIt, child: const MyApp()));
+>   await appConfig.customMethod(); // <--- New initialization must use await
+>   // ... runApp
 > }
+> ```
+
+### 2.2. Routing Standard
+
+All transitions between UIs/pages **MUST** be managed using the framework's named routes.
+
+* **Rule:** Routing must be configured using the **`routes`** map in `MaterialApp`, referencing the route names defined in **`RouteConstants`**.
+
+> **Example:**
+> ```dart
+> MaterialApp(
+>   // ...
+>   routes: {
+>     RouteConstants.routeName: (context) => const NamePage(),
+>   }
+> )
 > ```
 
 ---

@@ -5,6 +5,6 @@ part 'theme_state.freezed.dart';
 
 @freezed
 class ThemeState with _$ThemeState {
-  const factory ThemeState.initial() = ThemeInitial;
-  const factory ThemeState.newTheme(ThemeData themeData) = NewTheme;
+  const factory ThemeState.initial() = _ThemeInitial;
+  const factory ThemeState.newTheme(ThemeData themeData) = _NewTheme;
 }

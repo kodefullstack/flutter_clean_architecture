@@ -55,11 +55,11 @@ extension ThemeStatePatterns on ThemeState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ThemeInitial value)?  initial,TResult Function( NewTheme value)?  newTheme,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _ThemeInitial value)?  initial,TResult Function( _NewTheme value)?  newTheme,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case ThemeInitial() when initial != null:
-return initial(_that);case NewTheme() when newTheme != null:
+case _ThemeInitial() when initial != null:
+return initial(_that);case _NewTheme() when newTheme != null:
 return newTheme(_that);case _:
   return orElse();
 
@@ -78,11 +78,11 @@ return newTheme(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ThemeInitial value)  initial,required TResult Function( NewTheme value)  newTheme,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _ThemeInitial value)  initial,required TResult Function( _NewTheme value)  newTheme,}){
 final _that = this;
 switch (_that) {
-case ThemeInitial():
-return initial(_that);case NewTheme():
+case _ThemeInitial():
+return initial(_that);case _NewTheme():
 return newTheme(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -100,11 +100,11 @@ return newTheme(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ThemeInitial value)?  initial,TResult? Function( NewTheme value)?  newTheme,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _ThemeInitial value)?  initial,TResult? Function( _NewTheme value)?  newTheme,}){
 final _that = this;
 switch (_that) {
-case ThemeInitial() when initial != null:
-return initial(_that);case NewTheme() when newTheme != null:
+case _ThemeInitial() when initial != null:
+return initial(_that);case _NewTheme() when newTheme != null:
 return newTheme(_that);case _:
   return null;
 
@@ -124,8 +124,8 @@ return newTheme(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( ThemeData themeData)?  newTheme,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case ThemeInitial() when initial != null:
-return initial();case NewTheme() when newTheme != null:
+case _ThemeInitial() when initial != null:
+return initial();case _NewTheme() when newTheme != null:
 return newTheme(_that.themeData);case _:
   return orElse();
 
@@ -146,8 +146,8 @@ return newTheme(_that.themeData);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( ThemeData themeData)  newTheme,}) {final _that = this;
 switch (_that) {
-case ThemeInitial():
-return initial();case NewTheme():
+case _ThemeInitial():
+return initial();case _NewTheme():
 return newTheme(_that.themeData);case _:
   throw StateError('Unexpected subclass');
 
@@ -167,8 +167,8 @@ return newTheme(_that.themeData);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( ThemeData themeData)?  newTheme,}) {final _that = this;
 switch (_that) {
-case ThemeInitial() when initial != null:
-return initial();case NewTheme() when newTheme != null:
+case _ThemeInitial() when initial != null:
+return initial();case _NewTheme() when newTheme != null:
 return newTheme(_that.themeData);case _:
   return null;
 
@@ -180,8 +180,8 @@ return newTheme(_that.themeData);case _:
 /// @nodoc
 
 
-class ThemeInitial implements ThemeState {
-  const ThemeInitial();
+class _ThemeInitial implements ThemeState {
+  const _ThemeInitial();
   
 
 
@@ -191,7 +191,7 @@ class ThemeInitial implements ThemeState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThemeInitial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ThemeInitial);
 }
 
 
@@ -212,8 +212,8 @@ String toString() {
 /// @nodoc
 
 
-class NewTheme implements ThemeState {
-  const NewTheme(this.themeData);
+class _NewTheme implements ThemeState {
+  const _NewTheme(this.themeData);
   
 
  final  ThemeData themeData;
@@ -222,13 +222,13 @@ class NewTheme implements ThemeState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$NewThemeCopyWith<NewTheme> get copyWith => _$NewThemeCopyWithImpl<NewTheme>(this, _$identity);
+_$NewThemeCopyWith<_NewTheme> get copyWith => __$NewThemeCopyWithImpl<_NewTheme>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewTheme&&(identical(other.themeData, themeData) || other.themeData == themeData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NewTheme&&(identical(other.themeData, themeData) || other.themeData == themeData));
 }
 
 
@@ -244,8 +244,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class $NewThemeCopyWith<$Res> implements $ThemeStateCopyWith<$Res> {
-  factory $NewThemeCopyWith(NewTheme value, $Res Function(NewTheme) _then) = _$NewThemeCopyWithImpl;
+abstract mixin class _$NewThemeCopyWith<$Res> implements $ThemeStateCopyWith<$Res> {
+  factory _$NewThemeCopyWith(_NewTheme value, $Res Function(_NewTheme) _then) = __$NewThemeCopyWithImpl;
 @useResult
 $Res call({
  ThemeData themeData
@@ -256,17 +256,17 @@ $Res call({
 
 }
 /// @nodoc
-class _$NewThemeCopyWithImpl<$Res>
-    implements $NewThemeCopyWith<$Res> {
-  _$NewThemeCopyWithImpl(this._self, this._then);
+class __$NewThemeCopyWithImpl<$Res>
+    implements _$NewThemeCopyWith<$Res> {
+  __$NewThemeCopyWithImpl(this._self, this._then);
 
-  final NewTheme _self;
-  final $Res Function(NewTheme) _then;
+  final _NewTheme _self;
+  final $Res Function(_NewTheme) _then;
 
 /// Create a copy of ThemeState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? themeData = null,}) {
-  return _then(NewTheme(
+  return _then(_NewTheme(
 null == themeData ? _self.themeData : themeData // ignore: cast_nullable_to_non_nullable
 as ThemeData,
   ));
