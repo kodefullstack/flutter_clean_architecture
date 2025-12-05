@@ -4,6 +4,7 @@ import 'package:flutter_clean_architecture/core/app_injections.dart';
 import 'package:flutter_clean_architecture/core/app_providers.dart';
 import 'package:flutter_clean_architecture/core/constants/route_constants.dart';
 import 'package:flutter_clean_architecture/core/utils/environment.dart';
+import 'package:flutter_clean_architecture/l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [
         Locale('id'), // Indonesia
       ],
-      localizationsDelegates: const [
-        //AppLocalizations.delegate,
+      localizationsDelegates: [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
