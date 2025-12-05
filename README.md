@@ -20,7 +20,7 @@ The project is divided into three main layers to enforce separation of concerns:
 [Image of Clean Architecture layers diagram]
 
 
-### 1. **Presentation Layer (`lib/presentation`)** 💻
+### 1. **Presentation Layer (`lib/features/feature_name/presentation`)** 💻
 
 * **Focus:** Everything related to the **UI** and user interaction.
 * **Components:** **Widgets**, **Pages** (Views), and the **BLoC/Cubit** files.
@@ -30,7 +30,7 @@ The project is divided into three main layers to enforce separation of concerns:
     * **State:** Emits the resulting state/data back to the UI for rendering.
 * **No Business Logic:** Logic handled here is purely related to UI state and flow.
 
-### 2. **Domain Layer (`lib/domain`)** 🧠
+### 2. **Domain Layer (`lib/features/feature_name/domain`)** 🧠
 
 * **Focus:** The **Core Business Logic** of the application. It is independent of Flutter, BLoC, or any specific database/API implementation.
 * **Components:**
@@ -38,7 +38,7 @@ The project is divided into three main layers to enforce separation of concerns:
     * **Use Cases (Interactors):** Specific actions or features the application can perform (e.g., `GetUserPostsUseCase`). These orchestrate the flow of data.
     * **Repositories (Abstract):** Defines the contract (interface) for external data access.
 
-### 3. **Data Layer (`lib/data`)** 💾
+### 3. **Data Layer (`lib/features/feature_name/data`)** 💾
 
 * **Focus:** Handles **Data Acquisition** and **Storage** from external sources.
 * **Components:**
