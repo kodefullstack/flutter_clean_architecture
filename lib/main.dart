@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/core/app_config.dart';
 import 'package:flutter_clean_architecture/core/app_injections.dart';
 import 'package:flutter_clean_architecture/core/app_providers.dart';
+import 'package:flutter_clean_architecture/core/config/env.dart';
 import 'package:flutter_clean_architecture/core/constants/route_constants.dart';
 import 'package:flutter_clean_architecture/core/utils/environment.dart';
 import 'package:flutter_clean_architecture/l10n/app_localizations.dart';
@@ -14,7 +14,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   ); */
 
-  final config = AppConfig(Environment.dev);
+  final config = ConfigEnv(Environment.dev);
   final getIt = await getDependencies(config);
 
   runApp(AppProviders(getIt: getIt, child: const MyApp()));
