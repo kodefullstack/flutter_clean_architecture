@@ -24,10 +24,14 @@ var core = {
 };
 
 var features = {
-  "name": "request",
+  "name": "auth",
   "data":[
     {
-      "name": "request"
+      "name": "login"
+    },{
+      "name": "register"
+    },{
+      "name": "otp"
     }
   ],
 };
@@ -102,7 +106,7 @@ createFeatures(){
     createFile("features/$feature/presentation/blocs/$name/$bloc");
     createFile("features/$feature/presentation/blocs/$name/$blocEvent");
     createFile("features/$feature/presentation/blocs/$name/$blocState");
-    createFile("features/$feature/presentation/pages/${name}_page");
+    createFile("features/$feature/presentation/pages/$name/${name}_page");
   }
 }
 
@@ -121,7 +125,7 @@ createPresentation(){
     createFile("features/$feature/presentation/blocs/$name/$bloc");
     createFile("features/$feature/presentation/blocs/$name/$blocEvent");
     createFile("features/$feature/presentation/blocs/$name/$blocState");
-    createFile("features/$feature/presentation/pages/${name}_page");
+    createFile("features/$feature/presentation/pages/$name/${name}_page");
   }
 }
 
