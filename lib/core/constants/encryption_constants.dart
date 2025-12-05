@@ -1,0 +1,3 @@
+class EncryptionConstants {
+  EncryptionConstants._();
+}

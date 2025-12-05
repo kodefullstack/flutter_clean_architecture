@@ -1,0 +1,3 @@
+class StorageConstants {
+  StorageConstants._();
+}

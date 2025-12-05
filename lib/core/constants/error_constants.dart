@@ -1,0 +1,3 @@
+class ErrorConstants {
+  ErrorConstants._();
+}
